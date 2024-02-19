@@ -225,23 +225,23 @@
 //  --------------------------------
 
 // Explain
-function buildObject(keysList, valuesList) {
-  if (keysList.length !== valuesList.length) {
-    throw new Error('The arrays must be of the same length');
-  }
+// function buildObject(keysList, valuesList) {
+//   if (keysList.length !== valuesList.length) {
+//     throw new Error('The arrays must be of the same length');
+//   }
   
-  return keysList.reduce((acc, key, index) => {
-    return {
-      ...acc,
-      [key]: valuesList[index],
-    };
-  }, {});
-}
+//   return keysList.reduce((acc, key, index) => {
+//     return {
+//       ...acc,
+//       [key]: valuesList[index],
+//     };
+//   }, {});
+// }
 
-const keys = ['name', 'age', 'city'];
-const values = ['Alice', '25', 'New York'];
+// const keys = ['name', 'age', 'city'];
+// const values = ['Alice', '25', 'New York'];
 
-const result = buildObject(keys, values);
+// const result = buildObject(keys, values);
 // Output: { name: 'Alice', age: '25', city: 'New York' }
 
 // function buildObject(keysList, valuesList) {
@@ -262,3 +262,11 @@ const result = buildObject(keys, values);
 // const result = buildObject(keys, values);
 // // Output: { name: 'Alice', age: '25', city: 'New York' }
 // console.log(result)
+
+//  --------------------------------
+//  --------------------------------
+//  --------------------------------
+//  --------------------------------
+//  --------------------------------
+//  --------------------------------
+//  --------------------------------
