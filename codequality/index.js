@@ -107,15 +107,17 @@ const withdraw = (clients, balances, client, amount) => {
 // }
 
 // good
-function getRandomNumbers(length, start, end) {
-  if (Math.abs(end - start) < 1) {
-    return null;
-  }
+// function getRandomNumbers(length, start, end) {
+//   if (Math.abs(end - start) < 1) {
+//     return null;
+//   }
 
-  const min = Math.ceil(start);
-  const max = Math.ceil(end);
+//   const min = Math.ceil(start);
+//   const max = Math.ceil(end);
 
-  return new Array(length).fill().map(el => Math.floor(Math.random() * (max - min) + min));
-}
+//   return new Array(length)
+//     .fill()
+//     .map((el) => Math.floor(Math.random() * (max - min) + min));
+// }
 
-console.log(getRandomNumbers(10, 1.4, 3.6));
+// console.log(getRandomNumbers(10, 1.4, 3.6));

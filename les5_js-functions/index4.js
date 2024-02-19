@@ -4,8 +4,8 @@
 //   return num * num;
 // }
 
-const getSquare = num => num * num;
+// const getSquare = num => num * num;
 
-const result = getSquare(6);
+// const result = getSquare(6);
 
-console.log(result);
+// console.log(result);
