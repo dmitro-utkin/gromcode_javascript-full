@@ -229,7 +229,7 @@
 //   if (keysList.length !== valuesList.length) {
 //     throw new Error('The arrays must be of the same length');
 //   }
-  
+
 //   return keysList.reduce((acc, key, index) => {
 //     return {
 //       ...acc,
@@ -270,3 +270,117 @@
 //  --------------------------------
 //  --------------------------------
 //  --------------------------------
+
+// function compareObjects(obj1, obj2) {
+//   return JSON.stringify(obj1) === JSON.stringify(obj2);
+// }
+
+// function compareObjects(firstObj, secondObj) {
+//   const keys1 = Object.keys(firstObj);
+//   const keys2 = Object.keys(secondObj);
+
+//   if (keys1.length !== keys2.length) {
+//     return false;
+//   }
+
+//   for (const key of keys1) {
+//     if (firstObj[key] !== secondObj[key] || !secondObj.hasOwnProperty(key)) {
+//       return false;
+//     }
+//   }
+
+//   return true;
+// }
+
+// function compareObjects(firstObj, secondObj) {
+//   const firstKeys = Object.keys(firstObj);
+//   const secondKeys = Object.keys(secondObj);
+
+//   if (firstKeys.length !== secondKeys.length) {
+//     return false;
+//   }
+
+//   return firstKeys.every(key => secondObj.hasOwnProperty(key) && firstObj[key] === secondObj[key]);
+// }
+
+// // examples
+// const obj1 = {
+//   name: "Tom",
+//   age: 17,
+// };
+
+// const obj2 = {
+//   name: "Bob",
+//   age: 17,
+// };
+
+// const obj3 = {
+//   name: "Bob",
+//   age: 17,
+//   student: false,
+// };
+
+// const obj4 = {
+//   name: "Tom",
+//   age: 17,
+// };
+
+// const obj5 = {
+//   age: 17,
+//   name: "Tom",
+// };
+
+// console.log(compareObjects(obj1, obj2)); // ==> false
+// console.log(compareObjects(obj2, obj3)); // ==> false
+// console.log(compareObjects(obj1, obj4)); // ==> true
+// console.log(compareObjects(obj4, obj5)); // ==> true
+
+//  --------------------------------
+//  --------------------------------
+//  --------------------------------
+//  --------------------------------
+//  --------------------------------
+//  --------------------------------
+//  --------------------------------
+
+// Данные о пользователях храняться в виде объекта в формате
+const customers = {
+    'customer-id-1': {
+        name: 'William',
+        age: 54
+    },
+    'customer-id-2': {
+        name: 'Tom',
+        age: 17
+    },
+};
+
+// Нужно написать функцию, которая такой объект преобразует в массив и отсортирует пользователей по возрасту от самого младшего до старшего
+// Основные требования:
+// Функция с именем getCustomersList должна принимать объект в заданом выше формате
+// Функция должна вернуть список пользователей в виде массива, отсортированного по возрасту по возрастанию
+// Элементы итогового массива должны включать поле id, значением которого является ключ из исходного объекта
+// [
+//     {
+//         name: 'Tom',
+//         age: 17,
+//         id: 'customer-id-2'
+//     },     
+//     {
+//         name: 'William',
+//         age: 54,
+//         id: 'customer-id-1'
+//     },
+//     ...
+// ]
+// Исходный объект должен остаться неизменным
+
+function getCustomersList(customers) {
+  return Object.keys(customers).map(customerId => ({
+    id: customerId,
+    name: customers[customerId].name,
+    age: customers[customerId].age,
+  })).sort((a, b) => a.age - b.age);
+};
+
+console.log(getCustomersList(customers));
