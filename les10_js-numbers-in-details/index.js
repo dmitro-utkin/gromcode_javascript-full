@@ -176,17 +176,17 @@
 //     .map((el) => Math.floor(Math.random() * (max - min) + min));
 // }
 
-function getRandomNumbers(length, start, end) {
-  const min = Math.ceil(start);
-  // console.log(min)
-  const max = Math.ceil(end);
-  // console.log(max)
-  return (start > end || max === min) 
-    ? null
-    : new Array(length)
-      .fill()
-      .map((el) => Math.floor(Math.random() * (max - min) + min));
-}
+// function getRandomNumbers(length, start, end) {
+//   const min = Math.ceil(start);
+//   // console.log(min)
+//   const max = Math.ceil(end);
+//   // console.log(max)
+//   return (start > end || max === min) 
+//     ? null
+//     : new Array(length)
+//       .fill()
+//       .map((el) => Math.floor(Math.random() * (max - min) + min));
+// }
 
 // console.log(getRandomNumbers(5, 1.4, 3.22));
 // console.log(getRandomNumbers(5, 1.4, 3.22));
@@ -205,7 +205,7 @@ function getRandomNumbers(length, start, end) {
 // console.log(getRandomNumbers(7, 0.1, 0.96));
 // console.log(getRandomNumbers(7, 1.01, 1.1));
 
-console.log(getRandomNumbers(20, 0.5, 1.1));
+// console.log(getRandomNumbers(20, 0.5, 1.1));
 
 // --------------------------
 // --------------------------
