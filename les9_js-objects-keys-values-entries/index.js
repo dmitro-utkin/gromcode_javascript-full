@@ -375,12 +375,12 @@ const customers = {
 // ]
 // Исходный объект должен остаться неизменным
 
-function getCustomersList(customers) {
-  return Object.keys(customers).map(customerId => ({
-    id: customerId,
-    name: customers[customerId].name,
-    age: customers[customerId].age,
-  })).sort((a, b) => a.age - b.age);
-};
+// function getCustomersList(customers) {
+//   return Object.keys(customers).map(customerId => ({
+//     id: customerId,
+//     name: customers[customerId].name,
+//     age: customers[customerId].age,
+//   })).sort((a, b) => a.age - b.age);
+// };
 
-console.log(getCustomersList(customers));
+// console.log(getCustomersList(customers));
