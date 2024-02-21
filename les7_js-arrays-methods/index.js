@@ -138,21 +138,21 @@
 //   return -1;
 // }
 
-// function withdraw(clients, balances, client, amount) {
-//   const index = clients.findIndex((item) => item === client);
-//   return index !== -1
-//     ? balances[index] >= amount
-//       ? ((balances[index] -= amount), balances[index])
-//       : -1
-//     : -1;
-// }
+function withdraw(clients, balances, client, amount) {
+  const index = clients.findIndex((item) => item === client);
+  return index !== -1
+    ? balances[index] >= amount
+      ? ((balances[index] -= amount), balances[index])
+      : -1
+    : -1;
+}
 
-// // const withdraw = (clients, balances, client, amount) => {
-// //   const indexOfClient = clients.indexOf(client);
-// //   return amount > balances[indexOfClient]
-// //     ? -1
-// //     : balances[indexOfClient] - amount;
-// // }
+// const withdraw = (clients, balances, client, amount) => {
+//   const indexOfClient = clients.indexOf(client);
+//   return amount > balances[indexOfClient]
+//     ? -1
+//     : balances[indexOfClient] - amount;
+// }
 
 // const clients = ["Ann", "John", "User"];
 // const balances = [1400, 87, -6];
