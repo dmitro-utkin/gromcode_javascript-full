@@ -1,6 +1,6 @@
 // separate code and tests
 
-export const getSquareNumbers = (arr) => 
+export const getSquareArray = (arr) => 
   arr.map(num => num * num);
 
 export const getOddNumbers = arr => 
