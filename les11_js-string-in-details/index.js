@@ -195,20 +195,20 @@
 // ---------------------------------------------
 // ---------------------------------------------
 
-const countOccurrences = (text = '', str) => {
-  if (str === '') {
-    return null;
-  }
+// const countOccurrences = (text = '', str) => {
+//   if (str === '') {
+//     return null;
+//   }
 
-  text = text || '';
+//   text = text || '';
 
-  const matches = text.match(new RegExp(str, 'g')) || [];
+//   const matches = text.match(new RegExp(str, 'g')) || [];
 
-  return matches.length;
-};
+//   return matches.length;
+// };
 
-// Example usage:
-console.log(countOccurrences('hello, hello, hello', 'hello')); // Output: 3
-console.log(countOccurrences('abcdabefab', 'ab')); // Output: 3
-console.log(countOccurrences('', 'test')); // Output: 0
-console.log(countOccurrences('test', '')); // Output: null
+// // Example usage:
+// console.log(countOccurrences('hello, hello, hello', 'hello')); // Output: 3
+// console.log(countOccurrences('abcdabefab', 'ab')); // Output: 3
+// console.log(countOccurrences('', 'test')); // Output: 0
+// console.log(countOccurrences('test', '')); // Output: null
