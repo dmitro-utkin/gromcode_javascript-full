@@ -23,11 +23,27 @@ var не має блочной області видимості - це неуд
 
 // -----------------------------------
 
-let a = 17;
+// let a = 17;
 
-if (a) {
-  let a = 1;
-  console.log(a);
-};
+// if (a) {
+//   let a = 1;
+//   console.log(a);
+// };
 
-console.log(a);
+// console.log(a);
+
+// -------------------------------------
+
+// var greeting = 'Hello';
+
+// function sayHi() {
+//   greeting = 'Hi';
+//   console.log(greeting);
+
+//   if (false) {
+//     var greeting;
+//   }
+// }
+
+// sayHi();
+// console.log(greeting);
