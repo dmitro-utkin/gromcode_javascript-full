@@ -112,30 +112,50 @@ saveFuncCalls должна создавать массив, в который б
 withMemory присвой как свойство callsHistory созданный на шаге 2 массив. Не забываем что функция в JS - это объект, поэтому ей как и объекту можно присваивать свойства (ключи)
 */
 
-function saveFuncCalls(func) {
-  const callsHistory = [];
+// function saveFuncCalls(func) {
+//   const callsHistory = [];
 
-  function withMemory(...args) {
-    if (this) {
-      throw new Error('Context has been lost');
-    }
-    callsHistory.push(args);
-    return func.apply(this, args);
-  }
+//   function withMemory(...args) {
+//     callsHistory.push(args);
+//     return func.apply(this, args);
+//   }
 
-  withMemory.callsHistory = callsHistory;
-  return withMemory;
-}
+//   withMemory.callsHistory = callsHistory;
+//   return withMemory;
+// }
+// // example 1
+// function sum(firstNum, secondNum) {
+//   return firstNum + secondNum;
+// }
 
-// module.exports = saveFuncCalls;
+// const sumWithMemory = saveFuncCalls.bind(sum);
+// console.log(sumWithMemory(4, 2)); // ===> 6
+// sumWithMemory(9, 1); // ===> 10
 
-// example 1
-function sum(firstNum, secondNum) {
-  return firstNum + secondNum;
-}
+// console.log(sumWithMemory.callsHistory); // ===> [ [4, 2], [9, 1] ]
 
-const sumWithMemory = saveFuncCalls(sum);
-sumWithMemory(4, 2); // ===> 6
-sumWithMemory(9, 1); // ===> 10
+// // example 2
+// function addDelta(array, delta) {
+//   return array.map((el) => el + delta);
+// }
 
-sumWithMemory.callsHistory; // ===> [ [4, 2], [9, 1] ]
+// const addDeltaWithMemory = saveFuncCalls.bind(addDelta);
+// // console.log(addDeltaWithMemory([111, 22, 55, 4], 8)); // ===> [119, 30, 63, 12]
+// console.log(addDeltaWithMemory([9, 1, -8, 15, 7, 0], 7)); // ===> [16, 8, -1, 22, 14, 7]
+
+// // console.log(addDeltaWithMemory.callsHistory); // ===> [ [[111, 22, 55, 4], 8], [[9, 1, -8, 15, 7, 0], 7] ]
+
+// // example 3
+// const user = {
+//   name: "John",
+//   sayHi() {
+//     return this.name;
+//   },
+// };
+
+// const sayHiWithMemory = saveFuncCalls(user.sayHi);
+// // sayHiWithMemory(); // ===> throw error // because sayHiWithMemory lost context
+// const sayHiWithMemoryBinded = sayHiWithMemory.bind({ name: "Tom" });
+// // console.log(sayHiWithMemoryBinded()); // ===> Tom // because we fixed context with bind and run functon again
+
+// // console.log(sayHiWithMemory.callsHistory); // [ [] ]
