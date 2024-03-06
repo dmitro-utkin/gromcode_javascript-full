@@ -155,17 +155,17 @@ User должен принимать и сохранять name и age при с
 //   console.log(`New photo request was sent for ${this.name}`);
 // };
 
-// // User.prototype.setAge = function(newAge) {
-// //   if (newAge < 0) {
-// //     return false;
-// //   } else {
-// //     this.age = newAge;
-// //     if (this.age >= 25) {
-// //       console.log(`New photo request was sent for ${this.name}`);
-// //     }
-// //     return newAge;
-// //   }
-// // };
+// User.prototype.setAge = function(newAge) {
+//   if (newAge < 0) {
+//     return false;
+//   } else {
+//     this.age = newAge;
+//     if (this.age >= 25) {
+//       console.log(`New photo request was sent for ${this.name}`);
+//     }
+//     return newAge;
+//   }
+// };
 
 // User.prototype.setAge = function(newAge) {
 //   return newAge < 0 
