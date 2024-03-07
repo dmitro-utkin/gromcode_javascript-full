@@ -34,3 +34,43 @@ document.getElementById() - шукає елемент по ID
   document.getElementByTagName();
   document.getElementByClassName();
 */
+
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+// --------------------------- task 2 ----------------------------
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+/*
+Поиск элемента на странице
+С помощью JavaScript найдите элемент на странице
+Основные требования:
+  HTML находится в редакторе ниже
+  DOM элементы на странице ищите с помощью метода document.querySelector
+  Напишите ф-цию getTitleElement, которая найдет на странице элемент с классом .title, 
+    выведет найденый элемент в консоль с помощью console.dir(titleElem) и вернет его
+  Напишите ф-цию getInputElement, которая найдет на странице input c типом text 
+    выведет найденый элемент в консоль с помощью console.dir(inputElem) и вернет его
+  Ф-ции должны быть в файле index.js и экспортироваться из него под своими именами
+  <body>
+  <h1 class="title">Todo List</h1>
+  <main class="todo-list">
+    <div class="actions">
+      <input class="task-input" type="text" />
+      <button class="btn create-task-btn">Create</button>
+    </div>
+    <ul class="list">
+      <!-- Элементы списка должны генерироваться и добавлятся на страницу с помощью JavaScript -->
+      <li class="list__item">
+        <input type="checkbox" class="list__item-checkbox" />
+        Buy milk
+      </li>
+      <!-- ... -->
+      <li class="list__item list__item_done">
+        <input type="checkbox" class="list__item-checkbox" />
+        Visit doctor
+      </li>
+      <!-- ... -->
+    </ul>
+  </main>
+</body>
+*/
