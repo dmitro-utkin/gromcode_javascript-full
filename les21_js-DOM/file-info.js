@@ -476,18 +476,70 @@ finishForm должна вставить в начало формы инпут �
 finishForm должна изменить атрибут type с text на password для инпута с паролем
 Функция должна быть в файле index.js и экспортироваться из него под своим именем
 */
-// The finishForm function creates and inserts the missing form elements
-// It also modifies the attribute type for the password input
-export function finishForm() {
-  const loginForm = document.querySelector(".login-form");
+// // The finishForm function creates and inserts the missing form elements
+// // It also modifies the attribute type for the password input
+// export function finishForm() {
+//   const loginForm = document.querySelector(".login-form");
 
-  // Create and insert input for login name
-  const loginInput = document.createElement("input");
-  loginInput.setAttribute("type", "text");
-  loginInput.setAttribute("name", "login");
-  loginForm.prepend(loginInput);
+//   // Create and insert input for login name
+//   const loginInput = document.createElement("input");
+//   loginInput.setAttribute("type", "text");
+//   loginInput.setAttribute("name", "login");
+//   loginForm.prepend(loginInput);
 
-  // Modify the attribute type for the password input
-  const passwordInput = loginForm.querySelector('input[name="password"]');
-  passwordInput.setAttribute("type", "password");
-}
+//   // Modify the attribute type for the password input
+//   const passwordInput = loginForm.querySelector('input[name="password"]');
+//   passwordInput.setAttribute("type", "password");
+// }
+
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+// --------------------------- task 11 ----------------------------
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+/*
+Работа с классами для DOM элементов
+С помощью JavaScript измените классы на элементах в соответствии с условиями ниже
+Основные требования:
+HTML код:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setting attributes</title>
+  </head>
+
+  <body>
+    <ul class="list">
+      <li class="one">1</li>
+      <li class="two selected">2</li>
+      <li class="three three_done">3</li>
+      <li class="four some-class">4</li>
+    </ul>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
+Напишите ф-цию manageClasses, которая делает следующее:
+Должна добавить класс "selected" к элементу с классом "one"
+Должна удалить класс "selected" с элемента с классом "two"
+Должна переключить (toggle) класс "three_done" у элемента с классом "three"
+Должна добавить класс "another-class" для элемента с классом "four" если на нем есть класс "some-class"
+Ф-ция должна быть в файле index.js и экспортироваться из него под своим именем
+*/
+// // The manageClasses function modifies the classes of elements according to the specified conditions
+// export function manageClasses() {
+//   const elementOne = document.querySelector(".one");
+//   elementOne.classList.add("selected");
+
+//   const elementTwo = document.querySelector(".two");
+//   elementTwo.classList.remove("selected");
+
+//   const elementThree = document.querySelector(".three");
+//   elementThree.classList.toggle("three_done");
+
+//   const elementFour = document.querySelector(".four");
+//   if (elementFour.classList.contains("some-class")) {
+//     elementFour.classList.add("another-class");
+//   }
+// }
