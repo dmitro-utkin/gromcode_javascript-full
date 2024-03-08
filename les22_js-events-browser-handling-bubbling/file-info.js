@@ -295,7 +295,46 @@ HTML код:
 
 // ---------------------------------------------------------------
 // ---------------------------------------------------------------
-// --------------------------- task 4 ----------------------------
+// --------------------------- task 5 ----------------------------
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+/*
+Поле поиска
+При клике на кнопку, считайте текст из поля ввода
+Основные требования:
+HTML код:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event handler</title>
+  </head>
+
+  <body>
+    <div class="search">
+      <input type="text" class="search__input" />
+      <button class="search__btn">Search</button>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
+При клике на кнопку с классом .search__btn, выведите текст из инпута с классом .search__input в консоль
+Для назначения обработчика используйте addEventListener
+*/
+// const searchInput = document.querySelector('.search__input');
+// const searchBtn = document.querySelector('.search__btn');
+
+// const textToConsole = () => {
+//     console.log(searchInput.value);
+// }
+
+// searchBtn.addEventListener('click', textToConsole);
+
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+// --------------------------- task 6 ----------------------------
 // ---------------------------------------------------------------
 // ---------------------------------------------------------------
 /*
