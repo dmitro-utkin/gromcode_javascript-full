@@ -474,6 +474,17 @@ createButton должна создать DOM элемент button c помощ�
 Напиши функцию finishForm, которая должна дополнить логин форму
 finishForm должна вставить в начало формы инпут текстового типа с name="login"
 finishForm должна изменить атрибут type с text на password для инпута с паролем
+Приклад роботи:
+    <!-- index.html before -->
+<form class="login-form">
+  <input type="text" name="password">
+</form>
+
+<!-- index.html after -->
+<form class="login-form">
+  <input type="text" name="login">
+  <input type="password" name="password">
+</form>
 Функция должна быть в файле index.js и экспортироваться из него под своим именем
 */
 // // The finishForm function creates and inserts the missing form elements
@@ -526,16 +537,21 @@ HTML код:
 Должна переключить (toggle) класс "three_done" у элемента с классом "three"
 Должна добавить класс "another-class" для элемента с классом "four" если на нем есть класс "some-class"
 После того, как ф-ция отработает, HTML должен измениться следующим образом:
-    <!-- index.html before -->
-<form class="login-form">
-  <input type="text" name="password">
-</form>
+<!-- index.html before -->
+<ul class="list">
+  <li class="one">1</li>
+  <li class="two selected">2</li>
+  <li class="three three_done">3</li>
+  <li class="four some-class">4</li>
+</ul>
 
 <!-- index.html after -->
-<form class="login-form">
-  <input type="text" name="login">
-  <input type="password" name="password">
-</form>
+<ul class="list">
+  <li class="one selected">1</li>
+  <li class="two">2</li>
+  <li class="three">3</li>
+  <li class="four some-class another-class">4</li>
+</ul>
 Ф-ция должна быть в файле index.js и экспортироваться из него под своим именем
 */
 // // The manageClasses function modifies the classes of elements according to the specified conditions
@@ -587,20 +603,18 @@ HTML код:
 Считайте число из атрибута "data-number". Запишите квадрат этого числа в атрибут "data-squared-number"
 Считывайте и записывайте дата атрибуты с помощью свойства dataset у DOM элемента
 После того, как ф-ция отработает, HTML должен измениться следующим образом:
-    <!-- index.html before -->
+<!-- index.html before -->
 <ul class="list">
-  <li class="one">1</li>
-  <li class="two selected">2</li>
-  <li class="three three_done">3</li>
-  <li class="four some-class">4</li>
+  <li data-number="5" class="number"></li>
+  <li data-number="7" class="number"></li>
+  <li data-number="-3" class="number"></li>
 </ul>
 
 <!-- index.html after -->
 <ul class="list">
-  <li class="one selected">1</li>
-  <li class="two">2</li>
-  <li class="three">3</li>
-  <li class="four some-class another-class">4</li>
+  <li data-number="5" data-squared-number="25" class="number"></li>
+  <li data-number="7" data-squared-number="49" class="number"></li>
+  <li data-number="-3" data-squared-number="9" class="number"></li>
 </ul>
 Ф-ция должна быть в файле index.js и экспортироваться из него под своим именем
 */
@@ -649,20 +663,31 @@ HTML код:
 Найдите span, у которого значение атрибута data-number равно num и верните из ф-ции значение атрибута 
   data-section у родительского для span элемента с классом box
   Пример работы:
-    
+    <!-- index.html -->
+<div data-section="one" class="box">
+  <span data-number="1"></span>
+  <span data-number="2"></span>
+  <span data-number="3"></span>
+</div>
+
+<div data-section="two" class="box">
+  <span data-number="4"></span>
+  <span data-number="5"></span>
+  <span data-number="6"></span>
+</div>
 Обратите внимание, что ф-ция принимает число, а значение атрибутов всегда строка. 
   Не забывайте, что иногда необходимо привидение типов при сравнении
 Подсказка: чтобы найти нужный элемент по дата атрибуту, понадобится такой селектор `span[data-number="${num}"]`
 Ф-ция должна быть в файле index.js и экспортироваться из него под своим именем
 */
 // The getSection function finds the parent section based on the data-number attribute on the span element
-export function getSection(num) {
-  const spanElement = document.querySelector(`span[data-number="${num}"]`);
-  if (spanElement) {
-    const parent = spanElement.closest(".box");
-    if (parent) {
-      return parent.dataset.section;
-    }
-  }
-  return null;
-}
+// export function getSection(num) {
+//   const spanElement = document.querySelector(`span[data-number="${num}"]`);
+//   if (spanElement) {
+//     const parent = spanElement.closest(".box");
+//     if (parent) {
+//       return parent.dataset.section;
+//     }
+//   }
+//   return null;
+// }
