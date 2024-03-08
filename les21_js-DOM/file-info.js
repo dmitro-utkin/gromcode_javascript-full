@@ -612,3 +612,57 @@ HTML код:
 //     element.dataset.squaredNumber = number * number;
 //   });
 // }
+
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+// --------------------------- task 13 ----------------------------
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+/*
+Нахождение ближайшего родителя
+Есть 2 div, в каждом по 3 span. Найдите span по дата атрибуту и определите его родителя
+Основные требования:
+Стартовый HTML:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closest element</title>
+  </head>
+
+  <body>
+    <div data-section="one" class="box">
+      <span data-number="1"></span>
+      <span data-number="2"></span>
+      <span data-number="3"></span>
+    </div>
+    <div data-section="two" class="box">
+      <span data-number="4"></span>
+      <span data-number="5"></span>
+      <span data-number="6"></span>
+    </div>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
+Напишите ф-цию getSection, которая принимает как единственный аргумент - число (num)
+Найдите span, у которого значение атрибута data-number равно num и верните из ф-ции значение атрибута 
+  data-section у родительского для span элемента с классом box
+  Пример работы:
+    
+Обратите внимание, что ф-ция принимает число, а значение атрибутов всегда строка. 
+  Не забывайте, что иногда необходимо привидение типов при сравнении
+Подсказка: чтобы найти нужный элемент по дата атрибуту, понадобится такой селектор `span[data-number="${num}"]`
+Ф-ция должна быть в файле index.js и экспортироваться из него под своим именем
+*/
+// The getSection function finds the parent section based on the data-number attribute on the span element
+export function getSection(num) {
+  const spanElement = document.querySelector(`span[data-number="${num}"]`);
+  if (spanElement) {
+    const parent = spanElement.closest(".box");
+    if (parent) {
+      return parent.dataset.section;
+    }
+  }
+  return null;
+}
