@@ -37,7 +37,7 @@ document.getElementById() - шукає елемент по ID
 
 // ---------------------------------------------------------------
 // ---------------------------------------------------------------
-// --------------------------- task 2 ----------------------------
+// --------------------------- task 1 ----------------------------
 // ---------------------------------------------------------------
 // ---------------------------------------------------------------
 /*
@@ -93,7 +93,7 @@ document.getElementById() - шукає елемент по ID
 
 // ---------------------------------------------------------------
 // ---------------------------------------------------------------
-// --------------------------- task 3 ----------------------------
+// --------------------------- task 2 ----------------------------
 // ---------------------------------------------------------------
 // ---------------------------------------------------------------
 /*
@@ -142,7 +142,7 @@ DOM элементы на странице ищите с помощью мето
 //   console.dir(elementsList);
 //   return elementsList;
 //  }
- 
+
 //  // Функция getItemsArray ищет на странице все элементы с классом .tool
 //  // и преобразует полученный список в массив
 //  // Затем выводит этот массив в консоль с помощью console.dir
@@ -153,3 +153,108 @@ DOM элементы на странице ищите с помощью мето
 //   console.dir(elementsArray);
 //   return elementsArray;
 //  }
+
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+// --------------------------- task 3 ----------------------------
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+/*
+Получение содержимого элемента
+С помощью JavaScript найдите элемент на странице и получите его содержимое
+Основные требования:
+HTML код:
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM elements</title>
+  </head>
+
+  <body>
+    <h1 class="title">I am <i>Front-End</i> developer</h1>
+    <p class="about">I am good at <code>HTML / CSS</code> and <code>JavaScript</code></p>
+    <p class="plans">I will learn <b>Redux</b> and <b>React</b> soon</p>
+    <p class="goal">And will become <b>world class</b> software engineer in a year</p>
+
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
+DOM элементы на странице ищите с помощью метода document.querySelector
+Напишите ф-цию getTitle, которая найдет на странице элемент с классом .title
+  и вернет его текстовый контент с помощью textContent
+Напишите ф-цию getDescription, которая найдет на странице элемент с классом .about
+  и вернет его текстовый контент с помощью innerText
+Напишите ф-цию getPlans, которая найдет на странице элемент с классом .plans
+  и вернет его текстовый контент с помощью innerHTML
+Напишите ф-цию getGoal, которая найдет на странице элемент с классом .goal
+  и вернет его текстовый контент с помощью outerHTML
+Ф-ции должны быть в файле index.js и экспортироваться из него под своими именами
+*/
+
+// // Функция getTitle ищет на странице элемент с классом .title
+// // и возвращает его текстовый контент с помощью textContent
+// export function getTitle() {
+//   const titleElement = document.querySelector(".title");
+//   return titleElement.textContent;
+// }
+
+// // Функция getDescription ищет на странице элемент с классом .about
+// // и возвращает его текстовый контент с помощью innerText
+// export function getDescription() {
+//   const descriptionElement = document.querySelector(".about");
+//   return descriptionElement.innerText;
+// }
+
+// // Функция getPlans ищет на странице элемент с классом .plans
+// // и возвращает его текстовый контент с помощью innerHTML
+// export function getPlans() {
+//   const plansElement = document.querySelector(".plans");
+//   return plansElement.innerHTML;
+// }
+
+// // Функция getGoal ищет на странице элемент с классом .goal
+// // и возвращает его текстовый контент с помощью outerHTML
+// export function getGoal() {
+//   const goalElement = document.querySelector(".goal");
+//   return goalElement.outerHTML;
+// }
+
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+// --------------------------- task 4 ----------------------------
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+/*
+Update text content
+С помощью JavaScript найди элемент на странице и вставьте туда текст
+Основные требования:
+HTML код:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM elements</title>
+  </head>
+
+  <body>
+    <h1 class="title">I am <i>Front-End</i> developer</h1>
+    <script src="index.js"></script>
+  </body>
+</html>
+DOM элементы на странице ищи с помощью метода document.querySelector
+Напиши ф-цию setTitle, которая принимает единственный аргумент text (строка). 
+  setTitle должна найти на странице элемент с классом .title и установить в него заданный текст
+Текст вставляй с помощью textContent
+Ф-ция должна быть в файле index.js и экспортироваться из него под своим именем
+*/
+
+// Функция setTitle принимает единственный аргумент text (строка)
+// Находит на странице элемент с классом .title и устанавливает в него заданный текст
+// Текст вставляется с помощью textContent
+export function setTitle(text) {
+  const titleElement = document.querySelector(".title");
+  titleElement.textContent = text;
+}
