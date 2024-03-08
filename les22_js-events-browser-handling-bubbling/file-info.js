@@ -411,3 +411,40 @@ HTML код:
 // buttons.forEach(function(button) {
 //     button.addEventListener('click', handleClick);
 // });
+
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+// --------------------------- task 8 ----------------------------
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+/*
+Обработка события 'change'
+Добавьте обработчик на изменение текста в инпуте
+Основные требования:
+HTML код:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change handler</title>
+  </head>
+
+  <body>
+    <input type="text" class="text-input" />
+
+    <script src="index.js"></script>
+  </body>
+</html>
+Повесьте обработчик события 'change' на инпут с классом .text-input
+Для назначения обработчика используйте addEventListener
+При вводе текста в поле ввода текст из инпута нужно вывести в консоль
+Текст из инпута нужно получить с помощью объекта event (event.target.value)
+*/
+// const textInput = document.querySelector('.text-input');
+
+// const textToConsole = (event) => {
+//     console.log(event.target.value);
+// };
+
+// textInput.addEventListener('change', textToConsole);
