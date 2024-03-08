@@ -390,9 +390,58 @@ createButton должна создать DOM элемент button c помощ�
 
 // ---------------------------------------------------------------
 // ---------------------------------------------------------------
-// --------------------------- task 8 ----------------------------
+// --------------------------- task 9 ----------------------------
 // ---------------------------------------------------------------
 // ---------------------------------------------------------------
 /*
+Создание DOM элементов и вставка на страницу - 2
+С помощью JavaScript создайте недостающие элементы списка и добавьте их на свои места, чтобы дополнить список
+Основные требования:
+Стартовый HTML:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add elements to the DOM</title>
+  </head>
 
+  <body>
+    <ul class="list">
+      <li>2</li>
+      <li>3</li>
+      <li class="special">5</li>
+      <li>7</li>
+    </ul>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
+
+Напишите ф-цию finishList, которая должна создать и добавить в список недостающие элементы
+Используйте document.createElement для создания элементов списка
+Текст в созданные элементы вставляйте с помощью textContent
+Используйте методы append, prepend, before, after для вставки элементов на страницу
+После того, как ф-ция отработает, должен получиться список от 1 до 8.
+Ф-ция должна быть в файле index.js и экспортироваться из него под своим именем
 */
+// Функция finishList создает и добавляет в список недостающие элементы, чтобы дополнить список
+// The finishList function creates and adds the missing list elements to complete the list
+export function finishList() {
+  const list = document.querySelector(".list");
+
+  const newElement1 = document.createElement("li");
+  newElement1.textContent = "1";
+  list.prepend(newElement1);
+
+  const newElement2 = document.createElement("li");
+  newElement2.textContent = "4";
+  list.children[2].after(newElement2);
+
+  const newElement3 = document.createElement("li");
+  newElement3.textContent = "6";
+  list.children[4].after(newElement3);
+
+  const newElement4 = document.createElement("li");
+  newElement4.textContent = "8";
+  list.append(newElement4);
+}
