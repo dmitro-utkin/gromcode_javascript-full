@@ -75,18 +75,81 @@ document.getElementById() - шукає елемент по ID
 </body>
 */
 
-export function getTitleElement() {
-  const titleElem = document.querySelector('.title');
-  console.dir(titleElem);
-  return titleElem;
-}
+// export function getTitleElement() {
+//   const titleElem = document.querySelector('.title');
+//   console.dir(titleElem);
+//   return titleElem;
+// }
 
-getTitleElement();
+// getTitleElement();
 
-export function getInputElement() {
-  const inputElem = document.querySelector('input[type="text"]');
-  console.dir(inputElem);
-  return inputElem;
-}
+// export function getInputElement() {
+//   const inputElem = document.querySelector('input[type="text"]');
+//   console.dir(inputElem);
+//   return inputElem;
+// }
 
-getInputElement();
+// getInputElement();
+
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+// --------------------------- task 3 ----------------------------
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+/*
+Поиск нескольких элементов на странице
+С помощью JavaScript найдите все элементы на странице, которые удовлетворяют условие селектора
+Основные требования:
+HTML код:
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM elements</title>
+  </head>
+
+  <body>
+    <ul>
+      <li class="technology">HTML</li>
+      <li class="technology">CSS</li>
+      <li class="technology">React</li>
+      <li class="technology">Redux</li>
+    </ul>
+    <ul>
+      <li class="tool">Webpack</li>
+      <li class="tool">npm</li>
+      <li class="tool">ESLint</li>
+      <li class="tool">Babel</li>
+    </ul>
+    <script src="index.js"></script>
+  </body>
+  </html>
+DOM элементы на странице ищите с помощью метода document.querySelectorAll
+Напишите ф-цию getItemsList, которая найдет на странице все элементы с классом .technology
+  , выведет полученные элементы в консоль с помощью console.dir(elementsList) и вернет список из ф-ции
+Напишите ф-цию getItemsArray, которая найдет на странице все элементы с классом .tool
+  , преобразует полученный список в массив, выведет этот массив в консоль с помощью 
+  console.dir(elementsArray) и вернет массив из ф-ции. Преобразуйте полученный список 
+  (NodeList) в массив с помощь Array.from
+Ф-ции должны быть в файле index.js и экспортироваться из него под своими именами
+*/
+// Функция getItemsList ищет на странице все элементы с классом .technology
+// и выводит полученные элементы в консоль с помощью console.dir
+// Затем она возвращает список из функции
+// export function getItemsList() {
+//   const elementsList = document.querySelectorAll('.technology');
+//   console.dir(elementsList);
+//   return elementsList;
+//  }
+ 
+//  // Функция getItemsArray ищет на странице все элементы с классом .tool
+//  // и преобразует полученный список в массив
+//  // Затем выводит этот массив в консоль с помощью console.dir
+//  // и возвращает массив из функции
+//  // Для преобразования полученного списка (NodeList) в массив используем Array.from
+//  export function getItemsArray() {
+//   const elementsArray = Array.from(document.querySelectorAll('.tool'));
+//   console.dir(elementsArray);
+//   return elementsArray;
+//  }
