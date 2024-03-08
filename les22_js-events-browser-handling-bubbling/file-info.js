@@ -180,3 +180,48 @@ HTML:
 // clearedField.addEventListener('click', clearEventsList);
 // attachedHandlers.addEventListener('click', attachHandlers);
 // removedHandlers.addEventListener('click', removeHandlers);
+
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+// --------------------------- task 2 ----------------------------
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+/*
+Обработка события 'click'
+Добавьте обработчик на клик по кнопке
+Основные требования:
+HTML код:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event handler</title>
+  </head>
+
+  <body>
+    <button class="create-btn">Create</button>
+
+    <script src="index.js"></script>
+  </body>
+</html>
+Повесьте обработчик события 'click' на кнопку с классом .create-btn
+Для назначения обработчика используйте addEventListener
+При клике на кнопку выведите в alert текст done
+*/
+// const btnElem = document.querySelector('.create-btn');
+
+// const alertDone = () => {
+//     alert('done');
+// }
+
+// btnElem.addEventListener('click', alertDone)
+
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+// --------------------------- task 2 ----------------------------
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+/*
+
+*/
