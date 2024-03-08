@@ -369,3 +369,45 @@ HTML код:
 // };
 
 // singleUseBtn.addEventListener('click', clickedToConsole);
+
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+// --------------------------- task 7 ----------------------------
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+/*
+Event target - считывание текста с кнопки
+Достаньте текст с кнопки при клике на нее
+Основные требования:
+HTML код:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change handler</title>
+  </head>
+
+  <body>
+    <button class="btn">JavaScript</button>
+    <button class="btn">HTML</button>
+
+    <script src="index.js"></script>
+  </body>
+</html>
+Повесьте обработчик события 'click' на обе кнопки с классом btn
+Для назначения обработчиков используйте addEventListener
+Передавайте в addEventListener для обоих обработчиков одну и ту же ф-цию с именем handleClick
+При клике на кнопку, нужно вывести в консоль текст этой кнопки
+Используйте аргумент event у ф-ции handleClick, чтобы получить доступ к кнопке через event.target
+Текст с кнопки считайте с помощью textContent. То есть текст вам буде доступен через event.target.textContent внутри handleClick
+*/
+// const buttons = document.querySelectorAll('.btn');
+
+// const handleClick = (event) => {
+//     console.log(event.target.textContent);
+// }
+
+// buttons.forEach(function(button) {
+//     button.addEventListener('click', handleClick);
+// });
