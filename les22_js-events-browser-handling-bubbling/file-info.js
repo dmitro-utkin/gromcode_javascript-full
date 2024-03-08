@@ -338,3 +338,34 @@ HTML код:
 // ---------------------------------------------------------------
 // ---------------------------------------------------------------
 /*
+Single обработка события 'click' на кнопку
+Добавьте обработчик на клик по кнопке, который сработает только один раз
+Основные требования:
+HTML код:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event handler</title>
+  </head>
+
+  <body>
+    <button class="single-use-btn">Click me!</button>
+
+    <script src="index.js"></script>
+  </body>
+</html>
+Повесьте обработчик события 'click' на кнопку с классом .single-use-btn
+Для назначения обработчика используйте addEventListener
+При клике на кнопку выведите в консоль текст clicked
+при втором и следующих кликах текст выводиться не должен. Рекомендация - нужно отменить обработчик при первом клике
+*/
+// const singleUseBtn = document.querySelector('.single-use-btn');
+
+// const clickedToConsole = () => {
+//     console.log('clicked');
+//     singleUseBtn.removeEventListener('click', clickedToConsole);
+// };
+
+// singleUseBtn.addEventListener('click', clickedToConsole);
