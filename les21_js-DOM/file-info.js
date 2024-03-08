@@ -605,10 +605,10 @@ HTML код:
 Ф-ция должна быть в файле index.js и экспортироваться из него под своим именем
 */
 // The squaredNumbers function reads the number from the data attribute and writes its square to another data attribute
-export function squaredNumbers() {
-  const numberElements = document.querySelectorAll(".number");
-  numberElements.forEach((element) => {
-    const number = parseInt(element.dataset.number);
-    element.dataset.squaredNumber = number * number;
-  });
-}
+// export function squaredNumbers() {
+//   const numberElements = document.querySelectorAll(".number");
+//   numberElements.forEach((element) => {
+//     const number = parseInt(element.dataset.number);
+//     element.dataset.squaredNumber = number * number;
+//   });
+// }
