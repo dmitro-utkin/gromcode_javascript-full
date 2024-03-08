@@ -525,6 +525,17 @@ HTML код:
 Должна удалить класс "selected" с элемента с классом "two"
 Должна переключить (toggle) класс "three_done" у элемента с классом "three"
 Должна добавить класс "another-class" для элемента с классом "four" если на нем есть класс "some-class"
+После того, как ф-ция отработает, HTML должен измениться следующим образом:
+    <!-- index.html before -->
+<form class="login-form">
+  <input type="text" name="password">
+</form>
+
+<!-- index.html after -->
+<form class="login-form">
+  <input type="text" name="login">
+  <input type="password" name="password">
+</form>
 Ф-ция должна быть в файле index.js и экспортироваться из него под своим именем
 */
 // // The manageClasses function modifies the classes of elements according to the specified conditions
@@ -543,3 +554,61 @@ HTML код:
 //     elementFour.classList.add("another-class");
 //   }
 // }
+
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+// --------------------------- task 12 ----------------------------
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+/*
+Дата атрибуты (data-attributes)
+Сохраняем информацию на HTML элементах
+Основные требования:
+Стартовый HTML:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>data attributes</title>
+  </head>
+
+  <body>
+    <ul class="list">
+      <li data-number="5" class="number">😎</li>
+      <li data-number="7" class="number">😉</li>
+      <li data-number="-3" class="number">✌</li>
+    </ul>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
+Напишите ф-цию squaredNumbers, которая считывает число из дата атрибута и записывает квадрат этого числа в другой дата атрибут
+Ищите элементы с классом .number
+Считайте число из атрибута "data-number". Запишите квадрат этого числа в атрибут "data-squared-number"
+Считывайте и записывайте дата атрибуты с помощью свойства dataset у DOM элемента
+После того, как ф-ция отработает, HTML должен измениться следующим образом:
+    <!-- index.html before -->
+<ul class="list">
+  <li class="one">1</li>
+  <li class="two selected">2</li>
+  <li class="three three_done">3</li>
+  <li class="four some-class">4</li>
+</ul>
+
+<!-- index.html after -->
+<ul class="list">
+  <li class="one selected">1</li>
+  <li class="two">2</li>
+  <li class="three">3</li>
+  <li class="four some-class another-class">4</li>
+</ul>
+Ф-ция должна быть в файле index.js и экспортироваться из него под своим именем
+*/
+// The squaredNumbers function reads the number from the data attribute and writes its square to another data attribute
+export function squaredNumbers() {
+  const numberElements = document.querySelectorAll(".number");
+  numberElements.forEach((element) => {
+    const number = parseInt(element.dataset.number);
+    element.dataset.squaredNumber = number * number;
+  });
+}
