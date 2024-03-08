@@ -350,5 +350,49 @@ DOM элементы на странице ищите с помощью мето
 // ---------------------------------------------------------------
 // ---------------------------------------------------------------
 /*
+Создание DOM элементов и вставка на страницу
+С помощью JavaScript создайте DOM элемент и добавьте его на страницу
+Основные требования:
+HTML код:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clear element content</title>
+  </head>
+
+  <body>
+    <ul class="categories">
+      <li class="tool">Cars</li>
+      <li class="tool">Planes</li>
+      <li class="tool">Ships</li>
+      <li class="tool">Bicycles</li>
+    </ul>
+  </body>
+</html>
+
+Напишите ф-цию createButton, которая принимает единственный аргумент buttonText(строка)
+createButton должна создать DOM элемент button c помощью document.createElement
+  и вставить его в body с помощью append. Текст кнопки передается в аргументе ф-ции createButton
+Ф-ция должна быть в файле index.js и экспортироваться из него под своим именем
+Используйте textContent для назначения текста кнопке
+Пример работы: createButton('Send Email') добавит <button>Send Email</button> в тело документа
+*/
+// // Функция createButton принимает единственный аргумент buttonText (строка)
+// // Создает DOM элемент button с помощью document.createElement
+// // Вставляет его в body с помощью appendChild. Текст кнопки передается в аргументе функции createButton
+// export function createButton(buttonText) {
+//   const buttonElement = document.createElement("button");
+//   buttonElement.textContent = buttonText;
+//   document.body.appendChild(buttonElement);
+// }
+
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+// --------------------------- task 8 ----------------------------
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+/*
 
 */
