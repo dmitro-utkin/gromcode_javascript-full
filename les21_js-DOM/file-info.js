@@ -424,24 +424,70 @@ createButton должна создать DOM элемент button c помощ�
 После того, как ф-ция отработает, должен получиться список от 1 до 8.
 Ф-ция должна быть в файле index.js и экспортироваться из него под своим именем
 */
-// Функция finishList создает и добавляет в список недостающие элементы, чтобы дополнить список
-// The finishList function creates and adds the missing list elements to complete the list
-export function finishList() {
-  const list = document.querySelector(".list");
+// // Функция finishList создает и добавляет в список недостающие элементы, чтобы дополнить список
+// // The finishList function creates and adds the missing list elements to complete the list
+// export function finishList() {
+//   const list = document.querySelector(".list");
 
-  const newElement1 = document.createElement("li");
-  newElement1.textContent = "1";
-  list.prepend(newElement1);
+//   const newElement1 = document.createElement("li");
+//   newElement1.textContent = "1";
+//   list.prepend(newElement1);
 
-  const newElement2 = document.createElement("li");
-  newElement2.textContent = "4";
-  list.children[2].after(newElement2);
+//   const newElement2 = document.createElement("li");
+//   newElement2.textContent = "4";
+//   list.children[2].after(newElement2);
 
-  const newElement3 = document.createElement("li");
-  newElement3.textContent = "6";
-  list.children[4].after(newElement3);
+//   const newElement3 = document.createElement("li");
+//   newElement3.textContent = "6";
+//   list.children[4].after(newElement3);
 
-  const newElement4 = document.createElement("li");
-  newElement4.textContent = "8";
-  list.append(newElement4);
+//   const newElement4 = document.createElement("li");
+//   newElement4.textContent = "8";
+//   list.append(newElement4);
+// }
+
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+// --------------------------- task 10 ----------------------------
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+/*
+Установка атрибутов для DOM элементов
+С помощью JavaScript создай недостающие элементы формы
+Основные требования:
+Стартовый HTML:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setting attributes</title>
+  </head>
+
+  <body>
+    <form class="login-form">
+      <input type="text" name="password" />
+    </form>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
+Напиши функцию finishForm, которая должна дополнить логин форму
+finishForm должна вставить в начало формы инпут текстового типа с name="login"
+finishForm должна изменить атрибут type с text на password для инпута с паролем
+Функция должна быть в файле index.js и экспортироваться из него под своим именем
+*/
+// The finishForm function creates and inserts the missing form elements
+// It also modifies the attribute type for the password input
+export function finishForm() {
+  const loginForm = document.querySelector(".login-form");
+
+  // Create and insert input for login name
+  const loginInput = document.createElement("input");
+  loginInput.setAttribute("type", "text");
+  loginInput.setAttribute("name", "login");
+  loginForm.prepend(loginInput);
+
+  // Modify the attribute type for the password input
+  const passwordInput = loginForm.querySelector('input[name="password"]');
+  passwordInput.setAttribute("type", "password");
 }
