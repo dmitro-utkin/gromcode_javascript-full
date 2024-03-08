@@ -1,10 +1,11 @@
+
 const divElem = document.querySelector('.rect_div');
 const pElem = document.querySelector('.rect_p');
 const spanElem = document.querySelector('.rect_span');
 
 const logTarget = (text, color) => {
     const eventsListElem = document.querySelector('.events-list');
-    eventsListElem.innerHTML += `<span style="color: ${color}; margin-left: 8px">${text}</span>`
+    eventsListElem.innerHTML += `<span style="color: ${color}; margin-left: 8px">${text}</span>`;
 }
 
 const logGreenDiv = logTarget.bind(null, 'DIV', 'green');
@@ -32,25 +33,29 @@ const removedHandlers = document.querySelector('.remove-handlers-btn');
 
 // Attach the event handlers
 function attachHandlers() {
-    divElem.addEventListener('click', logTarget, true);
-    pElem.addEventListener('click', logTarget, true);
-    spanElem.addEventListener('click', logTarget, true);
-    spanElem.addEventListener('click', logTarget, false);    
-    pElem.addEventListener('click', logTarget, false);    
-    divElem.addEventListener('click', logTarget, false);
+    divElem.addEventListener('click', logGreyDiv, true);
+    divElem.addEventListener('click', logGreenDiv);
+
+    pElem.addEventListener('click', logGreyP, true);
+    pElem.addEventListener('click', logGreenP);
+
+    spanElem.addEventListener('click', logGreySpan, true);
+    spanElem.addEventListener('click', logGreenSpan);
 }
 
-  // Remove the event handlers
+// Remove the event handlers
 function removeHandlers() {
-    divElem.removeEventListener('click', logTarget, true);
-    pElem.removeEventListener('click', logTarget, true);
-    spanElem.removeEventListener('click', logTarget, true);
-    spanElem.removeEventListener('click', logTarget, false); 
-    pElem.removeEventListener('click', logTarget, false); 
-    divElem.removeEventListener('click', logTarget, false); 
+    divElem.removeEventListener('click', logGreyDiv, true);
+    divElem.removeEventListener('click', logGreenDiv);
+
+    pElem.removeEventListener('click', logGreyP, true);
+    pElem.removeEventListener('click', logGreenP);
+
+    spanElem.removeEventListener('click', logGreySpan, true);
+    spanElem.removeEventListener('click', logGreenSpan);
 }
 
-  // Function to clear the events-list
+// Function to clear the events-list
 function clearEventsList() {
     const eventsList = document.querySelector('.events-list');
     eventsList.innerHTML = '';
@@ -60,7 +65,3 @@ function clearEventsList() {
 clearedField.addEventListener('click', clearEventsList);
 attachedHandlers.addEventListener('click', attachHandlers);
 removedHandlers.addEventListener('click', removeHandlers);
-
-// attachedHandlers.removeEventListener('click', attachHandlers);
-// removedHandlers.removeEventListener('click', removeHandlers);
-
