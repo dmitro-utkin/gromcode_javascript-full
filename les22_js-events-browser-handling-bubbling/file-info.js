@@ -448,3 +448,41 @@ HTML код:
 // };
 
 // textInput.addEventListener('change', textToConsole);
+
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+// --------------------------- task 9 ----------------------------
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+/*
+Handle event for checkbox
+Попрактикуемся с обработчиками на изменение состояния чекбокса
+Основные требования:
+HTML код:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change handler</title>
+  </head>
+
+  <body>
+    <input type="checkbox" class="task-status" />
+
+    <script src="index.js"></script>
+  </body>
+</html>
+Повесь обработчик события 'change' на чекбокс с классом .task-status
+Для назначения обработчика используй addEventListener
+При клике на чекбокс выводите в консоль его состояние - true, если чекбокс отмечен и false, если нет
+Состояние (true / false) чекбокса  можно получить через свойство checked DOM элемента
+Состояние чекбокса нужно получить с помощью объекта event (event.target.checked)
+*/
+// const taskStatus = document.querySelector('.task-status');
+
+// const checkTaskStatus = (event) => {
+//     console.log(event.target.checked);
+// };
+
+// taskStatus.addEventListener('change', checkTaskStatus);
