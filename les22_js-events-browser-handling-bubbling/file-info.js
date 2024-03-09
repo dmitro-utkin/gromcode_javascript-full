@@ -486,3 +486,47 @@ HTML код:
 // };
 
 // taskStatus.addEventListener('change', checkTaskStatus);
+
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+// --------------------------- task 10 ----------------------------
+// ---------------------------------------------------------------
+// ---------------------------------------------------------------
+/*
+Подписка для нескольких элементов
+Добавьте обработчик на изменение состояния чекбокса
+Основные требования:
+HTML код:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event handler</title>
+  </head>
+
+  <body>
+    <div class="pagination">
+      <button class="pagination__page" data-page-number="1">1</button>
+      <button class="pagination__page" data-page-number="2">2</button>
+      <button class="pagination__page" data-page-number="3">3</button>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
+Повесьте обработчик события 'click' на все кнопки с классом .pagination__page
+Для назначения обработчика используйте addEventListener
+Передавайте в addEventListener для всех обработчиков одну и ту же ф-цию с именем handleClick
+При клике на кнопку, нужно вывести в консоль данные из дата атрибута data-page-number
+Для получения дата атрибута используйте объект event
+*/
+// const pages = document.querySelectorAll('.pagination__page');
+
+// const handleClick = event => {
+//     console.log(event.target.dataset.pageNumber);
+// }
+
+// pages.forEach(function(page) {
+//     page.addEventListener('click', handleClick);
+// });
