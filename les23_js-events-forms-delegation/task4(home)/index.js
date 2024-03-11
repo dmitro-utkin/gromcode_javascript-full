@@ -1,49 +1,48 @@
-const formElem = document.querySelector('.login-form');
-const formData = Object.fromEntries(new FormData(formElem));
+const emailInputElem = document.querySelector("#email");
+const passwordInputElem = document.querySelector("#password");
 
-const emailInput = document.getElementById('email');
-const passwordInput = document.getElementById('password');
+const emailErrorElem = document.querySelector(".error-text_email");
+const passwordErrorElem = document.querySelector(".error-text_password");
 
-emailInput.addEventListener('input', function () {
-  if (emailInput.validity.valueMissing || !emailInput.value.includes('@')) {
-    emailInput.classList.add('invalid');
-  } else {
-    emailInput.classList.remove('invalid');
-  }
-});
+const isRequired = (value) => (value ? undefined : "Required");
 
-passwordInput.addEventListener('input', function () {
-  if (passwordInput.validity.valueMissing) {
-    passwordInput.classList.add('invalid');
-  } else {
-    passwordInput.classList.remove('invalid');
-  }
-});
+const isEmail = (value) =>
+  value.includes("@") ? undefined : "Should be an email";
 
-const emailError = document.querySelector('.error-text_email');
-const passwordError = document.querySelector('.error-text_password');
+const validatorsByField = {
+  email: [isRequired, isEmail],
+  password: [isRequired],
+};
 
-emailInput.addEventListener('input', function () {
-  if (emailInput.validity.valueMissing) {
-    emailError.textContent = 'Required';
-  } else if (!emailInput.value.includes('@')) {
-    emailError.textContent = 'Should be an email';
-  } else {
-    emailError.textContent = '';
-  }
-});
+const validate = (fieldName, value) => {
+  const validators = validatorsByField[fieldName];
+  return validators
+    .map((validator) => validator(value))
+    .filter((errorText) => errorText)
+    .join(", ");
+};
 
-passwordInput.addEventListener('input', function () {
-  if (passwordInput.validity.valueMissing) {
-    passwordError.textContent = 'Required';
-  } else {
-    passwordError.textContent = '';
-  }
-});
+const onEmailChange = (event) => {
+  const errorText = validate("email", event.target.value);
+  emailErrorElem.textContent = errorText;
+};
 
-formElem.addEventListener('submit', function(event) {
+const onPasswordChange = (event) => {
+  const errorText = validate("password", event.target.value);
+  passwordErrorElem.textContent = errorText;
+};
+
+emailInputElem.addEventListener("input", onEmailChange);
+passwordInputElem.addEventListener("input", onPasswordChange);
+
+const formElem = document.querySelector(".login-form");
+
+const onFormSubmit = (event) => {
   event.preventDefault();
-  const formFields = new FormData(event.target);
-  const formData = Object.fromEntries(formFields);
-  alert(JSON.stringify(formData, null, 2));
-});
+  const formData = [...new FormData(formElem)]
+  .reduce((acc, [field, value]) => ({ ...acc, [field]: value }), {});
+
+  alert(JSON.stringify(formData));
+};
+
+formElem.addEventListener("submit", onFormSubmit);
