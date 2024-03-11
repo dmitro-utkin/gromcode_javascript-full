@@ -202,3 +202,20 @@ passwordInput.addEventListener('input', function () {
     passwordError.textContent = '';
   }
 });
+
+/*
+Если форма заполнена валидными данными и пользователь нажимает кнопку "Submit", то можно вывести данные формы в alert с использованием следующего JavaScript кода:
+*/
+// Выбираем форму
+// const formElem = document.querySelector('.login-form');
+
+// Обработчик события отправки формы
+formElem.addEventListener('submit', function(event) {
+  event.preventDefault(); // Предотвращаем отправку формы по умолчанию
+  const formFields = new FormData(event.target); // Получаем данные формы
+  const formData = Object.fromEntries(formFields); // Преобразуем данные формы в объект
+  alert(JSON.stringify(formData, null, 2)); // Выводим данные в виде объекта в alert
+});
+/*
+Этот код добавляет обработчик события отправки формы, который предотвращает отправку формы по умолчанию, извлекает данные формы и выводит их в виде объекта в alert, если форма заполнена валидными данными и пользователь нажимает кнопку "Submit".
+*/
