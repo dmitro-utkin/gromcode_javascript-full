@@ -1,10 +1,6 @@
 const formElem = document.querySelector('.login-form');
 const formData = Object.fromEntries(new FormData(formElem));
 
-// if (Object.keys(formData).length > 0) {
-//   alert(JSON.stringify(formData));
-// }
-
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
 
