@@ -11,29 +11,29 @@ const taskInput = document.querySelector(".task-input");
 const createTaskBtn = document.querySelector(".create-task-btn");
 
 const renderTasks = (tasksList) => {
-  listElem.innerHTML = "";
+  listElem.innerHTML = ""; // Clear the list before rendering
 
-  const tasksElems = tasksList
-    .sort((a, b) => a.done - b.done)
-    .map(({ id, text, done }) => {
-      const listItemElem = document.createElement("li");
-      listItemElem.classList.add("list__item");
-      listItemElem.setAttribute("data-task-id", id);
+  const sortedTasks = tasksList.sort((a, b) => a.done - b.done);
+  sortedTasks.forEach(({ id, text, done }) => {
+    const listItemElem = document.createElement("li");
+    listItemElem.classList.add("list__item");
+    listItemElem.setAttribute("data-task-id", id); // Set unique id as a data attribute
 
-      const checkbox = document.createElement("input");
-      checkbox.setAttribute("type", "checkbox");
-      checkbox.checked = done;
-      checkbox.classList.add("list__item-checkbox");
-      if (done) {
-        listItemElem.classList.add("list__item_done");
-      }
-      checkbox.addEventListener('change', () => toggleTaskStatus(id));
-      listItemElem.append(checkbox, text);
+    const checkbox = document.createElement("input");
+    checkbox.setAttribute("type", "checkbox");
+    checkbox.checked = done;
+    checkbox.classList.add("list__item-checkbox");
+    if (done) {
+      listItemElem.classList.add("list__item_done");
+    }
+    checkbox.addEventListener("change", () => toggleTaskStatus(id)); // Toggle task status on checkbox change
 
-      return listItemElem;
-    });
+    const taskTextElem = document.createElement("span");
+    taskTextElem.innerText = text;
 
-  listElem.append(...tasksElems);
+    listItemElem.append(checkbox, taskTextElem);
+    listElem.appendChild(listItemElem);
+  });
 };
 
 createTaskBtn.addEventListener("click", () => {
@@ -46,7 +46,7 @@ createTaskBtn.addEventListener("click", () => {
     };
     tasks.push(newTask);
     renderTasks(tasks);
-    taskInput.value = "";
+    taskInput.value = ""; // Clear the input field
   }
 });
 
@@ -56,6 +56,6 @@ const toggleTaskStatus = (taskId) => {
     tasks[taskIndex].done = !tasks[taskIndex].done;
     renderTasks(tasks);
   }
-}
+};
 
 renderTasks(tasks);
