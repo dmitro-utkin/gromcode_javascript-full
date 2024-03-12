@@ -219,3 +219,94 @@ formElem.addEventListener('submit', function(event) {
 /*
 Этот код добавляет обработчик события отправки формы, который предотвращает отправку формы по умолчанию, извлекает данные формы и выводит их в виде объекта в alert, если форма заполнена валидными данными и пользователь нажимает кнопку "Submit".
 */
+
+// ---------------------------------
+// ---------------------------------
+// ------------ task 2 -------------
+//----------------------------------
+// ---------------------------------
+/*
+Делегирование событий
+Отобрази координаты выбранного места на стадионе по клику на это мeсто
+CSS:
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.arena {
+  display: flex;
+}
+
+.sector {
+  display: flex;
+  flex-direction: column;
+  background-color: coral;
+  margin: 16px;
+}
+
+.sector__line {
+  display: flex;
+  height: 20px;
+  width: 200px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sector__seat {
+  height: 16px;
+  width: 16px;
+  background-color: aqua;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  cursor: pointer;
+}
+
+.board {
+  height: 100px;
+  width: 200px;
+  background-color: goldenrod;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-transform: uppercase;
+}
+
+HTML:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+      integrity="sha256-WAgYcAck1C1/zEl5sBl5cfyhxtLgKGdpI3oKyJffVRI="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="page">
+    <div class="arena"></div>
+    <div class="board">
+      <span>Selected seat</span>
+      <span class="board__selected-seat">-</span>
+    </div>
+  </body>
+</html>
+
+Основные требования:
+Отрисуй 3 сектора стадиона по 100 мест в каждом (10 х 10). 
+  Сектора нумеруются слева направо (1..3). 
+  Места нумеруются слева направо (1..10), ряды (CSS класс .sector__line) сверху вниз (1..10)
+По клику мыши по месту, должны отобразиться координаты места в отведенном для этого блоке. Формат текста S 2 - L 7 - S 3. Cледи за пробелами
+Секторы - CSS класс .sector, сидения - CSS класс .sector__seat, табло - CSS класс .board
+*/
