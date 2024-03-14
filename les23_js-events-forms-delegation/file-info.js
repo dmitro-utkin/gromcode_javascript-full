@@ -493,89 +493,6 @@ renderTasks(tasks);
 Доп практика с ДОМ, ивентами, массивами и объектами
 Попрактиковать алгоритм к решению задачи (здесь это критически важно) и качество кода (рефакторинг)
 */
-// --------------------------------
-// --------------------------------
-// --------------------------------
-// --------------------------------
-// --------------------------------
-// --------------------------------
-// --------------------------------
-// --------------------------------
-// --------------------------------
-// --------------------------------
-// --------------------------------
-// ------- початковий варіант -----
-// --------------------------------
-// --------------------------------
-// --------------------------------
-// --------------------------------
-// --------------------------------
-// --------------------------------
-// --------------------------------
-// --------------------------------
-// --------------------------------
-// --------------------------------
-// --------------------------------
-// --------------------------------
-// const tasks = [
-//   { id: 'task1', text: 'Buy milk', done: false },
-//   { id: 'task2', text: 'Pick up Tom from airport', done: false },
-//   { id: 'task3', text: 'Visit party', done: false },
-//   { id: 'task4', text: 'Visit doctor', done: true },
-//   { id: 'task5', text: 'Buy meat', done: true },
-// ];
-
-// const listElem = document.querySelector('.list');
-// const taskInput = document.querySelector('.task-input');
-// const createTaskBtn = document.querySelector('.create-task-btn');
-
-// const renderTasks = tasksList => {
-//   listElem.innerHTML = ''; // Clear the list before rendering
-
-//   const sortedTasks = tasksList.sort((a, b) => a.done - b.done);
-//   sortedTasks.forEach(({ id, text, done }) => {
-//     const listItemElem = document.createElement('li');
-//     listItemElem.classList.add('list__item');
-//     listItemElem.setAttribute('data-task-id', id); // Set unique id as a data attribute
-
-//     const checkbox = document.createElement('input');
-//     checkbox.setAttribute('type', 'checkbox');
-//     checkbox.checked = done;
-//     checkbox.classList.add('list__item-checkbox');
-//     if (done) {
-//       listItemElem.classList.add('list__item_done');
-//     }
-//     checkbox.addEventListener('change', () => toggleTaskStatus(id)); // Toggle task status on checkbox change
-
-//     const taskTextElem = document.createElement('span');
-//     taskTextElem.innerText = text;
-
-//     listItemElem.append(checkbox, taskTextElem);
-//     listElem.appendChild(listItemElem);
-//   });
-// };
-
-// createTaskBtn.addEventListener('click', () => {
-//   const taskText = taskInput.value.trim();
-//   if (taskText) {
-//     const newTask = { id: `task${tasks.length + 1}`, text: taskText, done: false };
-//     tasks.push(newTask);
-//     renderTasks(tasks);
-//     taskInput.value = ''; // Clear the input field
-//   }
-// });
-
-// const toggleTaskStatus = taskId => {
-//   const taskIndex = tasks.findIndex(task => task.id === taskId);
-//   if (taskIndex !== -1) {
-//     tasks[taskIndex].done = !tasks[taskIndex].done;
-//     renderTasks(tasks);
-//   }
-// };
-
-// renderTasks(tasks);
-
-
 // ---------------------------------------------
 // ---------------------------------------------
 // ---------------------------------------------
@@ -686,53 +603,150 @@ renderTasks(tasks);
 // --------------------------------------------------
 // --------------------------------------------------
 const tasks = [
-  { text: 'Buy milk', done: false },
-  { text: 'Pick up Tom from airport', done: false },
-  { text: 'Visit party', done: false },
-  { text: 'Visit doctor', done: true },
-  { text: 'Buy meat', done: true },
-];
-
-const listElem = document.querySelector('.list');
-const taskInput = document.querySelector('.task-input');
-const createTaskBtn = document.querySelector('.create-task-btn');
-
-
-const renderTasks = tasksList => {
+  { text: "Buy milk", done: false },
+  { text: "Pick up Tom from airport", done: false },
+  { text: "Visit party", done: false },
+  { text: "Visit doctor", done: true },
+  { text: "Buy meat", done: true },
+ ];
+ 
+ const listElem = document.querySelector(".list");
+ const taskInput = document.querySelector(".task-input");
+ const createTaskBtn = document.querySelector(".create-task-btn");
+ 
+ const renderTasks = (tasksList) => {
+  listElem.innerHTML = "";
+ 
   const tasksElems = tasksList
-    .sort((a, b) => a.done - b.done)
+    .sort((a, b) => a.done - b.done)  // Sort the tasks based on completion status
     .map(({ text, done }, index) => {
-      const listItemElem = document.createElement('li');
-      listItemElem.classList.add('list__item');
-      const checkbox = document.createElement('input');
-      checkbox.setAttribute('type', 'checkbox');
+      const listItemElem = document.createElement("li");
+      listItemElem.classList.add("list__item");
+ 
+      const checkbox = document.createElement("input");
+      checkbox.setAttribute("type", "checkbox");
       checkbox.checked = done;
-      checkbox.classList.add('list__item-checkbox');
+      checkbox.classList.add("list__item-checkbox");
+ 
       if (done) {
-        listItemElem.classList.add('list__item_done');
+        listItemElem.classList.add("list__item_done");
       }
-      checkbox.addEventListener('change', () => toggleTaskStatus(index)); // Добавление обработчика события для чекбокса
-      listItemElem.append(checkbox, text);
-
+ 
+      checkbox.addEventListener("change", () => {
+        tasks[index].done = checkbox.checked;
+        renderTasks(tasks.sort((a, b) => a.done - b.done)); // Re-render tasks with sorted list
+      });
+ 
+      const taskTextElem = document.createElement("span");
+      taskTextElem.innerText = text;
+      listItemElem.append(checkbox, taskTextElem);
+      listElem.appendChild(listItemElem);
+ 
       return listItemElem;
     });
-
-  listElem.innerHTML = ''; // Очистка списка перед обновлением
-  listElem.append(...tasksElems); // Обновление списка с новым состоянием дел
-};
-
-function toggleTaskStatus(index) {
-  tasks[index].done = !tasks[index].done; // Переключение статуса выполнения/невыполнения дела
-  renderTasks(tasks); // Повторное отображение списка с обновленным состоянием
-}
-
-createTaskBtn.addEventListener('click', () => {
+ 
+  listElem.append(...tasksElems);
+ };
+ 
+ createTaskBtn.addEventListener("click", () => {
   const taskText = taskInput.value.trim();
   if (taskText) {
-    tasks.push({ text: taskText, done: false });
-    renderTasks(tasks);
-    taskInput.value = '';
+    const newTask = {
+      text: taskText,
+      done: false,
+    };
+    tasks.push(newTask);
+    renderTasks(tasks.sort((a, b) => a.done - b.done)); // Re-render tasks with sorted list
+    taskInput.value = "";
   }
-});
+ });
+ 
+ renderTasks(tasks.sort((a, b) => a.done - b.done));
 
-renderTasks(tasks);
+
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// ------------------ (робочий) ---------------------
+// --------------------------------------------------
+// --------------- виправлений варіант --------------
+// --------------------------------------------------
+// --------------------------------------------------
+// const tasks = [
+//   { text: "Buy milk", done: false, id: "1" },
+//   { text: "Pick up Tom from airport", done: false, id: "2" },
+//   { text: "Visit party", done: false, id: "3" },
+//   { text: "Visit doctor", done: true, id: "4" },
+//   { text: "Buy meat", done: true, id: "5" },
+// ];
+
+// const listElem = document.querySelector(".list");
+// const taskInput = document.querySelector(".task-input");
+// const createTaskBtn = document.querySelector(".create-task-btn");
+
+// const renderTasks = (tasksList) => {
+//   listElem.innerHTML = "";
+
+//   const tasksElems = tasksList
+//     .sort((a, b) => a.done - b.done)
+//     .map(({ id, text, done }) => {
+//       const listItemElem = document.createElement("li");
+//       listItemElem.classList.add("list__item");
+//       listItemElem.setAttribute("data-task-id", id);
+
+//       const checkbox = document.createElement("input");
+//       checkbox.setAttribute("type", "checkbox");
+//       checkbox.setAttribute("id", id);
+//       checkbox.checked = done;
+//       checkbox.classList.add("list__item-checkbox");
+//       if (done) {
+//         listItemElem.classList.add("list__item_done");
+//       }
+//       checkbox.addEventListener("change", toggleTaskStatus);
+//       const taskTextElem = document.createElement("span");
+//       taskTextElem.innerText = text;
+//       listItemElem.append(checkbox, text);
+//       listElem.appendChild(listItemElem);
+
+//       return listItemElem;
+//     });
+
+//   listElem.append(...tasksElems);
+// };
+
+// // put your code here
+// createTaskBtn.addEventListener("click", () => {
+//   const taskText = taskInput.value.trim();
+//   if (taskText) {
+//     const newTask = {
+//       id: `task${tasks.length + 1}`,
+//       text: taskText,
+//       done: false,
+//     };
+//     tasks.push(newTask);
+//     renderTasks(tasks);
+//     taskInput.value = "";
+//   }
+// });
+// // Функція пререключення чекбоксу по ID
+// function toggleTaskStatus(e) {
+//   const taskIndex = tasks.findIndex((task) => task.id === e.target.id);
+//   if (taskIndex !== -1) {
+//     tasks[taskIndex].done = !tasks[taskIndex].done;
+//     renderTasks(tasks);
+//   }
+// }
+
+// renderTasks(tasks);
