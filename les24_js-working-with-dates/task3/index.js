@@ -1,8 +1,12 @@
 const getDiff = (startDate, endDate) => {
   const diffInMs = Math.abs(startDate - endDate);
+  console.log(diffInMs);
   const days = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+  console.log(days);
   const hours = Math.floor((diffInMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  console.log(hours);
   const minutes = Math.floor((diffInMs % (1000 * 60 * 60)) / (1000 * 60));
+  console.log(minutes);
   const seconds = Math.floor((diffInMs % (1000 * 60)) / 1000);
 
   return `${days}d ${hours}h ${minutes}m ${seconds}s`;
