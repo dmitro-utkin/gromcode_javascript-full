@@ -684,69 +684,69 @@ const tasks = [
 // --------------- виправлений варіант --------------
 // --------------------------------------------------
 // --------------------------------------------------
-// const tasks = [
-//   { text: "Buy milk", done: false, id: "1" },
-//   { text: "Pick up Tom from airport", done: false, id: "2" },
-//   { text: "Visit party", done: false, id: "3" },
-//   { text: "Visit doctor", done: true, id: "4" },
-//   { text: "Buy meat", done: true, id: "5" },
-// ];
+const tasks = [
+  { text: "Buy milk", done: false, id: "1" },
+  { text: "Pick up Tom from airport", done: false, id: "2" },
+  { text: "Visit party", done: false, id: "3" },
+  { text: "Visit doctor", done: true, id: "4" },
+  { text: "Buy meat", done: true, id: "5" },
+];
 
-// const listElem = document.querySelector(".list");
-// const taskInput = document.querySelector(".task-input");
-// const createTaskBtn = document.querySelector(".create-task-btn");
+const listElem = document.querySelector(".list");
+const taskInput = document.querySelector(".task-input");
+const createTaskBtn = document.querySelector(".create-task-btn");
 
-// const renderTasks = (tasksList) => {
-//   listElem.innerHTML = "";
+const renderTasks = (tasksList) => {
+  listElem.innerHTML = "";
 
-//   const tasksElems = tasksList
-//     .sort((a, b) => a.done - b.done)
-//     .map(({ id, text, done }) => {
-//       const listItemElem = document.createElement("li");
-//       listItemElem.classList.add("list__item");
-//       listItemElem.setAttribute("data-task-id", id);
+  const tasksElems = tasksList
+    .sort((a, b) => a.done - b.done)
+    .map(({ id, text, done }) => {
+      const listItemElem = document.createElement("li");
+      listItemElem.classList.add("list__item");
+      listItemElem.setAttribute("data-task-id", id);
 
-//       const checkbox = document.createElement("input");
-//       checkbox.setAttribute("type", "checkbox");
-//       checkbox.setAttribute("id", id);
-//       checkbox.checked = done;
-//       checkbox.classList.add("list__item-checkbox");
-//       if (done) {
-//         listItemElem.classList.add("list__item_done");
-//       }
-//       checkbox.addEventListener("change", toggleTaskStatus);
-//       const taskTextElem = document.createElement("span");
-//       taskTextElem.innerText = text;
-//       listItemElem.append(checkbox, text);
-//       listElem.appendChild(listItemElem);
+      const checkbox = document.createElement("input");
+      checkbox.setAttribute("type", "checkbox");
+      checkbox.setAttribute("id", id);
+      checkbox.checked = done;
+      checkbox.classList.add("list__item-checkbox");
+      if (done) {
+        listItemElem.classList.add("list__item_done");
+      }
+      checkbox.addEventListener("change", toggleTaskStatus);
+      const taskTextElem = document.createElement("span");
+      taskTextElem.innerText = text;
+      listItemElem.append(checkbox, text);
+      listElem.appendChild(listItemElem);
 
-//       return listItemElem;
-//     });
+      return listItemElem;
+    });
 
-//   listElem.append(...tasksElems);
-// };
+  listElem.append(...tasksElems);
+};
 
-// // put your code here
-// createTaskBtn.addEventListener("click", () => {
-//   const taskText = taskInput.value.trim();
-//   if (taskText) {
-//     const newTask = {
-//       id: `task${tasks.length + 1}`,
-//       text: taskText,
-//       done: false,
-//     };
-//     tasks.push(newTask);
-//     renderTasks(tasks);
-//     taskInput.value = "";
-//   }
-// });
-// // Функція пререключення чекбоксу по ID
-// function toggleTaskStatus(e) {
-//   const taskIndex = tasks.findIndex((task) => task.id === e.target.id);
-//   if (taskIndex !== -1) {
-//     tasks[taskIndex].done = !tasks[taskIndex].done;
-//     renderTasks(tasks);
-//   }
-// }
+// put your code here
+createTaskBtn.addEventListener("click", () => {
+  const taskText = taskInput.value.trim();
+  if (taskText) {
+    const newTask = {
+      id: `task${tasks.length + 1}`,
+      text: taskText,
+      done: false,
+    };
+    tasks.push(newTask);
+    renderTasks(tasks);
+    taskInput.value = "";
+  }
+});
+// Функція пререключення чекбоксу по ID
+function toggleTaskStatus(e) {
+  const taskIndex = tasks.findIndex((task) => task.id === e.target.id);
+  if (taskIndex !== -1) {
+    tasks[taskIndex].done = !tasks[taskIndex].done;
+    renderTasks(tasks);
+  }
+}
 
-// renderTasks(tasks);
+renderTasks(tasks);
