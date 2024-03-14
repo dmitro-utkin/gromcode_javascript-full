@@ -62,15 +62,7 @@ new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]
 Считаем что неделя стартует с воскресенья
 Входящая дата должна остаться неизменной
 */
-const weekDays = [
-  'Su',
-  'Mo',
-  'Tu',
-  'We',
-  'Th',
-  'Fr',
-  'St'
-]
+const weekDays = ["Su", "Mo", "Tu", "We", "Th", "Fr", "St"];
 
 const dayOfWeek = (date, days) => {
   const day = new Date(date).getDate();
@@ -115,14 +107,14 @@ export const getGreenwichTime = (date) => {
     timeZone: "UTC", // Set the time zone to UTC for Greenwich time
   });
   return formatter.format(date);
- };
- 
- // Example usage:
- const inputDate = new Date(); // Example date
- const greenwichTime = getGreenwichTime(inputDate);
- console.log(greenwichTime); // Output: '06:43' (sample time)
+};
 
- // --------------------------------------------------
+// Example usage:
+const inputDate = new Date(); // Example date
+const greenwichTime = getGreenwichTime(inputDate);
+console.log(greenwichTime); // Output: '06:43' (sample time)
+
+// --------------------------------------------------
 // --------------------------------------------------
 // --------------------------------------------------
 // --------------------------------------------------
@@ -150,18 +142,20 @@ export const getGreenwichTime = (date) => {
 const getDiff = (startDate, endDate) => {
   const diffInMs = Math.abs(startDate - endDate);
   const days = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diffInMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const hours = Math.floor(
+    (diffInMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
   const minutes = Math.floor((diffInMs % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((diffInMs % (1000 * 60)) / 1000);
- 
+
   return `${days}d ${hours}h ${minutes}m ${seconds}s`;
- };
- 
- // Example usage:
- const startDateTime = new Date("2024-03-14T09:00:00");
- const endDateTime = new Date("2024-03-20T18:30:45");
- const timeDifference = getDiff(startDateTime, endDateTime);
- console.log(timeDifference); // Sample output: '6d 9h 30m 45s'
+};
+
+// Example usage:
+const startDateTime = new Date("2024-03-14T09:00:00");
+const endDateTime = new Date("2024-03-20T18:30:45");
+const timeDifference = getDiff(startDateTime, endDateTime);
+console.log(timeDifference); // Sample output: '6d 9h 30m 45s'
 /*
 Функція getDiff приймає два параметри - startDate (початкова дата) і endDate (кінцева дата).
 Розраховується різниця між цими двома датами в мілісекундах і зберігається в змінній diffInMs.
@@ -171,7 +165,7 @@ const getDiff = (startDate, endDate) => {
 Приклад використання показує, як можна передати дати у функцію та вивести результат у форматі "6d 9h 30m 45s", що відображає загальну різницю між двома датами у днях, годинах, хвилинах і секундах.
 */
 
- // --------------------------------------------------
+// --------------------------------------------------
 // --------------------------------------------------
 // --------------------------------------------------
 // --------------------------------------------------
