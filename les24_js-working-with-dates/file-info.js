@@ -121,3 +121,44 @@ export const getGreenwichTime = (date) => {
  const inputDate = new Date(); // Example date
  const greenwichTime = getGreenwichTime(inputDate);
  console.log(greenwichTime); // Output: '06:43' (sample time)
+
+ // --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// ---------------- Task 3 --------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+/*
+Разница дат
+Напишите функцию, которая посчитает разницу между двумя датами
+Основные требования:
+Функция должна экспортироваться под именем getDiff
+Сигнатура: getDiff(startDate, endDate), где startDate, endDate - объекты даты.
+Функция должна вернуть разницу в формате 275d 2h 58m 16s
+Входящие даты должны остаться неизменными
+Функция должна искать разницу, не зависимо от того, какая дата из переданных меньше
+*/
+// Function to calculate the difference between two dates
+const getDiff = (startDate, endDate) => {
+  const diffInMs = Math.abs(startDate - endDate);
+  const days = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diffInMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diffInMs % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diffInMs % (1000 * 60)) / 1000);
+ 
+  return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+ };
+ 
+ // Example usage:
+ const startDateTime = new Date("2024-03-14T09:00:00");
+ const endDateTime = new Date("2024-03-20T18:30:45");
+ const timeDifference = getDiff(startDateTime, endDateTime);
+ console.log(timeDifference); // Sample output: '6d 9h 30m 45s'
