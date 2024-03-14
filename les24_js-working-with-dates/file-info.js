@@ -62,3 +62,62 @@ new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]
 Считаем что неделя стартует с воскресенья
 Входящая дата должна остаться неизменной
 */
+const weekDays = [
+  'Su',
+  'Mo',
+  'Tu',
+  'We',
+  'Th',
+  'Fr',
+  'St'
+]
+
+const dayOfWeek = (date, days) => {
+  const day = new Date(date).getDate();
+  const dateInFuture = new Date(date).setDate(day + days);
+
+  return weekDays[new Date(dateInFuture).getDay()];
+};
+
+const result = dayOfWeek(new Date(2025, 0, 1), 14);
+
+console.log(result);
+
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// ---------------- Task 2 --------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+/*
+Время в Гринвиче
+Напишите функцию, которая вернет время в Гринвиче
+Основные требования:
+Функция должна экспортироваться под именем getGreenwichTime
+Сигнатура: getGreenwichTime(date), где date - объект даты.
+Функция должна вернуть время в формате '06:43'
+Входящая дата должна остаться неизменной
+*/
+// Function to get the Greenwich time from the specified date
+export const getGreenwichTime = (date) => {
+  const formatter = new Intl.DateTimeFormat("en", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+    timeZone: "UTC", // Set the time zone to UTC for Greenwich time
+  });
+  return formatter.format(date);
+ };
+ 
+ // Example usage:
+ const inputDate = new Date(); // Example date
+ const greenwichTime = getGreenwichTime(inputDate);
+ console.log(greenwichTime); // Output: '06:43' (sample time)
