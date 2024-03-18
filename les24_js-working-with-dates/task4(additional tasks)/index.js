@@ -57,16 +57,6 @@ const studentsBirthDays = (students) => {
   return months;
 };
 
-// Example usage:
-const students = [
-  { name: "Tom", birthDate: "01/15/2010" },
-  { name: "Ben", birthDate: "01/17/2008" },
-  { name: "Sam", birthDate: "03/15/2010" },
-  { name: "Q", birthDate: "03/15/2011" },
-  { name: "w", birthDate: "06/15/2012" },
-  { name: "e", birthDate: "11/15/2014" },
-  { name: "r", birthDate: "12/15/2007" },
-  { name: "t", birthDate: "12/15/2007" },
-];
 const groupedByBirthDays = studentsBirthDays(students);
 console.log(groupedByBirthDays);
+
