@@ -1,7 +1,19 @@
 import { getItem } from './storage.js';
 
+const listElem = document.querySelector('.list');
 
-const compareTasks = (a, b) => b.createDate - a.createDate;
+const compareTasks = (a, b) => {
+  const dateA = new Date(a.createDate);
+  const dateB = new Date(b.createDate);
+
+  if (a.done && !b.done) {
+    return 1;
+  } else if (!a.done && b.done) {
+    return -1;
+  } else {
+    return dateB - dateA;
+  }
+};
 
 const createCheckbox = ({ done, id }) => {
   const checkboxElem = document.createElement('input');
