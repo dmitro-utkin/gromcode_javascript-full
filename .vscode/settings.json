@@ -4,5 +4,6 @@
     "titleBar.activeBackground": "#3A4508",
     "titleBar.activeForeground": "#F8FCE5"
   },
-  "powershell.integratedConsole.startLocation": "Panel"
+  "powershell.integratedConsole.startLocation": "Panel",
+  "liveServer.settings.port": 5501
 }
