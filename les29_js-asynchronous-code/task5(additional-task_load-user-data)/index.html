@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>load-user-data</title>
+</head>
+<body>
+  <pre>    
+  Load user data
+  Напиши функцию, которая принимает id пользователя и имитирует загрузку
+  данных о пользователе.
+  Основные требования:
+  - Сигнатура функции: requestUserData(userId, callback), 
+    где первый аргумент - строка, идентификатор пользователя, 
+    второй - callback, функция обратного вызова
+  - requestUserData должна вызывать callback со случайной задержкой (от 1 до 3 секунд) 
+    c данными в виде объекта { userId: 'userid777', email: 'userid777@example.com' }.
+    Этот объект нужно сформировать внутри ф-ции: ключ userId передан в функцию как аргумент 
+    (то есть значение там может быть любое), а email получен прибавлением к userId
+    строки @example.com
+  - Функция requestUserData должна вызвать callback с текстом ошибки во втором аргументе - 
+    callback(null, 'Failed to load user data'), если переданный userId равен строке 'broken'
+  - Все вызовы функции callback должны происходить со случайной задержкой (от 1 до 3 секунд). 
+    Для вычисления времени задержки создай отдельную функцию, так код будет максимально читаемым
+  </pre>
+  <script src="index.js" type="module"></script>
+</body>
+</html>
