@@ -1,7 +1,7 @@
 // pinger(num, period)
 
-const pinger = (num, period) => {
-  let i = num;
+const pinger = (count, period) => {
+  let i = count;
   console.log('Ping');
   const interval = setInterval(() => {
     if (--i > 0) {
@@ -17,4 +17,5 @@ const pinger = (num, period) => {
   // }, num * period);
 }
 
-pinger(5, 1000);
+pinger(5, 100);
+pinger(7, 150);
