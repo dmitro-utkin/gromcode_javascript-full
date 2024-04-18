@@ -5,13 +5,13 @@ const requestUserData = (userId) => {
     if (userId === "broken") {
       setTimeout(() => {
         reject(new Error("User not found"));
-      }, 500);
+      }, 1000);
     }
     setTimeout(() => {
       resolve({
         name: "John",
         age: 17,
-        email: `${userId}`,
+        email: `${userId}@example.com`,
         userId,
       });
     }, 1000);
@@ -20,7 +20,7 @@ const requestUserData = (userId) => {
   return request;
 };
 
-requestUserData("broken")
+requestUserData("userid777")
   .catch(error => {
     console.log(error);
     throw new Error("Error");
