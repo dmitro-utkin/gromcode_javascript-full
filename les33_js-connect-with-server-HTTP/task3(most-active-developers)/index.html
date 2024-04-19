@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Most active developers</title>
+</head>
+<body>
+  <pre>
+    Самые активные разработчики
+    Напишите ф-цию, которая по данным репозитория найдет самых активных разработчиков
+    Основные требования:
+    Сигнатура getMostActiveDevs({ days: 7, userId: 'userId', repoId: 'repoId' }), где
+      days - количество дней (от текущего момента), которые нужно учитывать в расчетах; 
+      userId - идентификатор пользователя, которому принадлежит репозиторий; 
+      repoId - название репозитория
+    Данные коммитов можно получить по адресу api.github.com/repos/USERID/REPOID/commits?per_page=100
+    Нас интересуют следующие данные c ответа сервера:
+    [
+    {
+        "sha": "79572e34d18c67768c93b1a4d60703a5929363a3",
+        "node_id": "MDY6Q29tbWl0MTAyNzAyNTA6Nzk1NzJlMzRkMThjNjc3NjhjOTNiMWE0ZDYwNzAzYTU5MjkzNjNhMw==",
+        "commit": {
+        "author": {
+            "name": "Sebastian Markbåge", // <==
+            "email": "sema@fb.com", // <==
+            "date": "2019-12-03T01:53:08Z" // <==
+        },
+    ...
+    getMostActiveDevs должна вернуть промис, который зарезолвит массив наиболее активных пользователей (с наибольшим количеством коммитов) за указаный период в формате [{ count: 5, name: 'Tom', email: 'tom@example.com' }]
+    Если наибольшее количество коммитов набрали несколько пользователей, то они все должны попасть в итоговый массив
+  </pre>
+  <script src="index.js"></script>
+</body>
+</html>
