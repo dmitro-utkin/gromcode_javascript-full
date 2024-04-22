@@ -5,14 +5,14 @@ import { setItem } from "./storage.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   getTasksList()
-  .then((tasksList) => {
-    setItem("tasksList", tasksList);
-    renderTasks();
-  });
+    .then(tasksList => {
+      setItem("tasksList", tasksList);
+      renderTasks();
+    })
   initTodoListHandlers();
 });
 
-const onStorageChange = (e) => {
+const onStorageChange = e => {
   if (e.key === "tasksList") {
     renderTasks();
   }
@@ -20,6 +20,6 @@ const onStorageChange = (e) => {
 
 window.addEventListener("storage", onStorageChange);
 
-// 1. Get Data from server
+// 1. Get data from server
 // 2. Save data to front-end storage
-// 3. Update UI based on new data
+// 3. Update UI

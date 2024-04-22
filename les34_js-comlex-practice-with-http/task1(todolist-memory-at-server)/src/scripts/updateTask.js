@@ -8,14 +8,14 @@ export const onToggleTask = e => {
   if (!isCheckbox) {
     return;
   }
-  const taskId = e.target.dataset.id; 
+  const taskId = e.target.dataset.id;
   const tasksList = getItem('tasksList');
-  const done = e.target.checked;
-  const { text, createDate } = tasksList
+  const {text, createDate} = tasksList
     .find(task => task.id === taskId);
+  const done = e.target.checked;
 
   const updatedTask = {
-    text, 
+    text,
     createDate,
     done,
     finishDate: done 
@@ -24,11 +24,11 @@ export const onToggleTask = e => {
   };
 
   updateTask(taskId, updatedTask)
-  .then(() => getTasksList())
-  .then(newTasksList => {
-    setItem("tasksList", newTasksList);
-    renderTasks();
-  });
+    .then(() => getTasksList())
+    .then(newTasksList => {
+      setItem('tasksList', newTasksList);
+      renderTasks();
+    });
 };
 
 // 1. Prepare data
