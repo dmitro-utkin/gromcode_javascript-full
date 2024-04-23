@@ -32,6 +32,17 @@ export const onToggleTask = (e) => {
     });
 };
 
+// Функція для видалення завдання при кліку на кнопку видалення
+export const deleteTask = (taskId) => {
+  deleteTask(taskId)
+      .then(() => getTasksList())
+      .then(newTasksList => {
+          setItem('tasksList', newTasksList);
+          renderTasks();
+      })
+      .catch(error => console.error('Failed to delete task:', error));
+};
+
 // // 1. Prepare data
 // // 2. Update data in db
 // // 3. Read new data from server

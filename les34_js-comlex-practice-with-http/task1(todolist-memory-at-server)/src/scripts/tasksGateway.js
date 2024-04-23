@@ -29,7 +29,7 @@ export const updateTask = (taskId, updatedTaskData) => {
   });
 };
 
-export const delleteTask = (taskId) => {
+export const deleteTask = (taskId) => {
   return fetch(`${baseUrl}/${taskId}`, {
     method: 'DELETE',
   });
