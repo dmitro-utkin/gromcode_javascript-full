@@ -32,7 +32,6 @@ export const onToggleTask = (e) => {
     });
 };
 
-// Функція для видалення завдання при кліку на кнопку видалення
 export const deleteTask = (taskId) => {
   deleteTask(taskId)
       .then(() => getTasksList())
