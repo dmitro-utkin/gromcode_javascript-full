@@ -5,11 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const submitButton = form.querySelector('.submit-button');
 
   form.addEventListener('input', function () {
-    if (form.reportValidity()) {
-      submitButton.setAttribute('disabled', false);
-    } else {
-      submitButton.setAttribute('disabled', true);
-    }
+    submitButton.disabled = !form.reportValidity();
   });
 
   form.addEventListener('submit', function (event) {
