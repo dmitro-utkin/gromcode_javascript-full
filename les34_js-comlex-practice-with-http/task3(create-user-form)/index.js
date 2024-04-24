@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const formData = Object.fromEntries(new FormData(form));
-    fetch(serverUrl, {
+    return fetch(serverUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
