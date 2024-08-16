@@ -1,6 +1,6 @@
 // Explain
 
-export const createLogger = () => {
+const createLogger = () => {
   const messages = [];
 
   const addToLog = (message, type) => {
