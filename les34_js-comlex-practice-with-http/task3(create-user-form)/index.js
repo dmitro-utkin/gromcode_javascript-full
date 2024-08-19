@@ -14,9 +14,6 @@ const onInputChange = () => {
 };
 
 formElem.addEventListener('input', onInputChange)
-const clearForm = () => {
-  formElem.reset();
-};
 
 const createUserAndSubmitForm = event => {
   event.preventDefault();
@@ -34,13 +31,19 @@ const createUserAndSubmitForm = event => {
       if (response.ok) {
         return response.json().then(data => {
           alert(JSON.stringify(data));
-          clearForm();
+          formElem.reset();
         });
-      } else {
-        textContent = 'Failed to create user';
+      } 
+      else {
+        return response.json().then(errorData => {
+          alert(`Error creating user: ${errorData.message}`);
+        });
       }
     })
-    .catch(() => textContent = 'Failed to create user');
+    .catch(error => {
+      console.error('Error creating user:', error);
+      alert('Failed to create user. Please try again later.');
+    });
 };
 
 formElem.addEventListener('submit', createUserAndSubmitForm);
