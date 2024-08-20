@@ -5,5 +5,8 @@
     "titleBar.activeForeground": "#F8FCE5"
   },
   "powershell.integratedConsole.startLocation": "Panel",
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "cSpell.words": [
+    "Parens"
+  ]
 }
